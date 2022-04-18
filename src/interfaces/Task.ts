@@ -1,6 +1,6 @@
-export default interface Task {
-  title: string;
-  description: string;
+export interface Task {
+  title: String;
+  description: String;
   done: boolean;
   _id: string;
 }

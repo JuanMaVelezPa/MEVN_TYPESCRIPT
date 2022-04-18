@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Task from "@/interfaces/Task";
+import { Task } from "@/interfaces/Task";
 import { createTask } from "@/services/TaskService";
 
 export default defineComponent({
@@ -25,8 +25,9 @@ export default defineComponent({
   },
   methods: {
     async saveTask() {
-      console.log(this.task);
-      await createTask(this.task);
+      const res = await createTask(this.task);
+      console.log(res);
+      this.$router.push({ name: "tasks" });
     },
   },
 });
