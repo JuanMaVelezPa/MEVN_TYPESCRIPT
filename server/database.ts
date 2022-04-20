@@ -1,9 +1,11 @@
 import { connect } from "mongoose";
+import * as dotenv from "dotenv";
 
 export const startConnection = async () => {
   try {
-    const db = await connect("mongodb://localhost/mevn-database");
-    console.log(db.connection.name);
+    dotenv.config();
+    const db = await connect(process.env.MONGO_URI!);
+    console.log('-- Mongodb connected!');
   } catch (error) {
     console.log(error);
   }

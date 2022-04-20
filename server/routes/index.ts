@@ -3,7 +3,6 @@ import Task from "../models/Task";
 
 const router = Router();
 
-/* Hello World */
 router.get("/", (req, res) => {
   res.send("Hello world!");
 });

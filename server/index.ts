@@ -1,6 +1,7 @@
 import app from "./app";
 import { startConnection } from "./database";
+import * as dotenv from "dotenv";
 
+dotenv.config();
 startConnection();
-app.listen(3000);
-console.log("This server is running in port 3000");
+app.listen(process.env.PORT!);
